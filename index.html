@@ -17,7 +17,7 @@
         y: [1],
         mode: 'markers',
         type: 'scatter',
-        marker: { size: 5 }
+        marker: { size: 10 }
     };
 
     var trace2 = {
@@ -25,7 +25,7 @@
         y: [1],
         mode: 'markers',
         type: 'scatter',
-        marker: { size: 5 }
+        marker: { size: 10 }
     };
 
     var trace3 = {
@@ -33,7 +33,7 @@
         y: [10],
         mode: 'markers',
         type: 'scatter',
-        marker: { size: 5 }
+        marker: { size: 10 }
     };
 
     const vertices = [
@@ -47,15 +47,14 @@
         y: [],
         mode: 'markers',
         type: 'scatter',
-        marker: { size: 5 }
+        marker: { size: 2 }
     }
-
 
 
     let previousX = Math.random()*10 + 1
     let previousY = Math.random()*10 + 1
 
-    for (let i = 0; i < 1000; i++){
+    for (let i = 0; i < 4444; i++){
 
         // pick 1 of 3 vertices of triangle
         let randomIndex = Math.floor(Math.random() * vertices.length)
@@ -94,7 +93,7 @@
         yaxis: {
             range: [0, 11]
         },
-        title:'Chaos'
+        title:'The Chaos Game - Sierpinski Triangle'
     };
 
     Plotly.newPlot('myDiv', data, layout);
