@@ -1,7 +1,6 @@
 # The Chaos Game-Sierpinski Triangle
 
-![alt tag](http://i.imgur.com/fjpkjzh.png)
-
+![alt tag](http://i.imgur.com/BynBk1x.png)
 
 1. Start with a random point inside the triangle. Let's call this the previous point
 2. Pick a random vertex
@@ -9,4 +8,4 @@
 4. Make the new point the previous point
 5. repeat steps 2-5
 
-Even though the vertex is picked at random, the 'chaos' will make a Sierpinski Triangle.
+Even though the vertex is picked at random, the 'chaos' will make a Sierpinski Triangle. This is based off the idea of fractals...whatever that means
