@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <div id="myDiv"></div>
+</body>
+</html>
+
+
+<script>
+    var trace1 = {
+        x: [1],
+        y: [1],
+        mode: 'markers',
+        type: 'scatter',
+        marker: { size: 5 }
+    };
+
+    var trace2 = {
+        x: [10],
+        y: [1],
+        mode: 'markers',
+        type: 'scatter',
+        marker: { size: 5 }
+    };
+
+    var trace3 = {
+        x: [5],
+        y: [10],
+        mode: 'markers',
+        type: 'scatter',
+        marker: { size: 5 }
+    };
+
+    const vertices = [
+        {x: 10, y: 1},
+        {x: 5, y: 10},
+        {x: 1, y: 1}
+    ]
+
+    var points = {
+        x: [],
+        y: [],
+        mode: 'markers',
+        type: 'scatter',
+        marker: { size: 5 }
+    }
+
+
+
+    let previousX = Math.random()*10 + 1
+    let previousY = Math.random()*10 + 1
+
+    for (let i = 0; i < 1000; i++){
+
+        // pick 1 of 3 vertices of triangle
+        let randomIndex = Math.floor(Math.random() * vertices.length)
+        let randomVertexX =  vertices[randomIndex].x
+        let randomVertexY =  vertices[randomIndex].y
+
+        // find point between of verticies and previousX
+        let middleX = Math.abs((randomVertexX + previousX))/2
+        let middleY = Math.abs((randomVertexY + previousY))/2
+
+        // push to points
+        points.x.push(middleX)
+        points.y.push(middleY)
+
+        console.log(' ')
+        console.log(randomVertexX, randomVertexY)
+        console.log(previousX, previousY)
+        console.log(middleX, middleY)
+        console.log(' ')
+
+        // update previous (x,y)
+        previousX = middleX
+        previousY = middleY
+
+
+
+    }
+
+
+    var data = [ trace1, trace2, trace3, points ];
+
+    var layout = {
+        xaxis: {
+            range: [ 0, 11 ]
+        },
+        yaxis: {
+            range: [0, 11]
+        },
+        title:'Chaos'
+    };
+
+    Plotly.newPlot('myDiv', data, layout);
+</script>
